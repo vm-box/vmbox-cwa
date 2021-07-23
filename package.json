@@ -1,6 +1,7 @@
 {
   "name": "vmbox-cwa",
   "version": "0.1.0",
+  "homepage": "./modules/servers/vmbox/templates/clientpanel/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

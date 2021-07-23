@@ -5,7 +5,10 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -21,7 +24,37 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Management App</title>
+    <script>
+      window.PredefinedParams = {
+        wsHash: "{{wsHash}}",
+        defaultIpAddress: "{{dedicatedip}}",
+        defaultPassword: "{{defaultPassword}}",
+        wsAddr: "{{wsAddr}}",
+        defaultUsername: "{{defaultUsername}}",
+      };
+      window.IsDemo = false;
+    </script>
+
+    <script src="%PUBLIC_URL%/assets/js/libs/jquery-3.1.1.min.js"></script>
+
+    <!-- BEGIN Snackbar -->
+    <script src="%PUBLIC_URL%/assets/js/snackbar.min.js"></script>
+    <!-- END Snackbar -->
+
+    <!-- BEGIN SweetAlerts THEME GLOBAL STYLES -->
+    <script src="%PUBLIC_URL%/plugins/sweetalerts/promise-polyfill.js"></script>
+    <link
+      href="%PUBLIC_URL%/plugins/sweetalerts/sweetalert2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="%PUBLIC_URL%/plugins/sweetalerts/sweetalert.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- END SweetAlerts THEME GLOBAL STYLES -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -36,5 +69,9 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- BEGIN SweetAlerts SCRIPTS -->
+    <script src="%PUBLIC_URL%/plugins/sweetalerts/sweetalert2.min.js"></script>
+    <!-- END SweetAlerts SCRIPTS -->
   </body>
 </html>
