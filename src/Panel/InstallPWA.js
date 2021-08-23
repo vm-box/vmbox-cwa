@@ -54,7 +54,11 @@ function InstallPWA(props) {
   React.useEffect(() => {
     if (catched) {
       var IsPersistent = customerDetails ? customerDetails.IsPersistent : false;
-      if (IsPersistent) {
+      if (
+        IsPersistent &&
+        Interface.Utils.qs.GetQuery("InstallPWA") &&
+        !window.matchMedia("(display-mode: standalone)").matches
+      ) {
         window.deferredPwaPrompt.prompt().then(() => {
           var urlWithoutWsAddress = window.location.href.split("?")[0];
           window.location.href = `${urlWithoutWsAddress}`;
