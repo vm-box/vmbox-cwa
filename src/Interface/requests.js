@@ -4,14 +4,18 @@ import Alert from "./Alert";
 
 const RequestTypes = {
   CreateSession: "CreateSession",
+  SetSessionPass: "SetSessionPass",
+  RemoveSession: "RemoveSession",
+  CreateWMKSTicket: "CreateWMKSTicket",
 };
 
 // an object in format { key:(ReponseCode) => value:(array of Callbacks or a single callback function for OnlyOnce requests) }
 const Responses = {};
 
 function ResponseHandler(data) {
+  console.log("Responses", Responses);
   if (!data || !data.code) return;
-  if (Object.keys(Responses).includes(data.code)) {
+  if (Object.keys(Responses).includes(`${data.code}`)) {
     if (typeof Responses[data.code] === "function") {
       Responses[data.code](data.content);
     } else {

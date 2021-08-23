@@ -14,10 +14,11 @@ import { SubmitNewHandler, Handlers } from "./handlers";
 
 */
 function HandleIncomingMessage(Messages) {
+  if (!Messages || typeof Messages !== "string") return;
   try {
     Messages = JSON.parse(Messages);
   } catch (error) {
-    console.log(error);
+    console.log(error, `Message`, Messages);
     return;
   }
   if (!Messages || !Messages.length) {
@@ -41,7 +42,7 @@ function HandleIncomingMessage(Messages) {
       var typeHandlers = Handlers[Message.type]; // an array of handlers
       for (var i = 0; i < typeHandlers.length; i++) {
         if (typeof typeHandlers[i] === "function") {
-          typeHandlers[i](Message.data);
+          typeHandlers[i](Message.data, Message.vmRecordId);
         } else {
           console.log(
             `non func type for Message Handler, Type: ${Message.type}`
@@ -49,7 +50,7 @@ function HandleIncomingMessage(Messages) {
         }
       }
     } else {
-      Alert.Show("Unhandled Message Type", "error");
+      Alert.Show(`Unhandled Message Type [${Message.type}]`, "error");
     }
   });
 }

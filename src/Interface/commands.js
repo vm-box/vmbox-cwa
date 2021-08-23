@@ -1,5 +1,6 @@
 export default {
   GetPanelDetails: "GetPanelDetails",
+  TryPassword: "TryPassword",
   GetPanelScripts: "GetPanelScripts",
   ExecScript: "ExecScript",
   CancelScript: "CancelScript",

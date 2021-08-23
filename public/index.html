@@ -26,17 +26,46 @@
     -->
     <title>Management App</title>
     <script>
-      window.PredefinedParams = {
-        wsHash: "{{wsHash}}",
-        defaultIpAddress: "{{dedicatedip}}",
-        defaultPassword: "{{defaultPassword}}",
-        wsAddr: "{{wsAddr}}",
-        defaultUsername: "{{defaultUsername}}",
-      };
+      window.DefaultTheme = "classic";
+      window.DefaultThemeMode = "light";
       window.IsDemo = false;
+      window.PublickURL = "%PUBLIC_URL%";
+      //  OS Logos
+      window.OsLogos = {
+        centOs: "%PUBLIC_URL%/assets/OsLogos/centos.png",
+        debian: "%PUBLIC_URL%/assets/OsLogos/debian.png",
+        issabel: "%PUBLIC_URL%/assets/OsLogos/issabel.png",
+        kali: "%PUBLIC_URL%/assets/OsLogos/kali.png",
+        linux: "%PUBLIC_URL%/assets/OsLogos/linux.png",
+        mikrotik: "%PUBLIC_URL%/assets/OsLogos/mikrotik.png",
+        other: "%PUBLIC_URL%/assets/OsLogos/other.png",
+        ubuntu: "%PUBLIC_URL%/assets/OsLogos/ubuntu.png",
+        windows: "%PUBLIC_URL%/assets/OsLogos/windows.png",
+      };
+      window.OsTags = {
+        // Template Aliases
+        "دبین ۱۰": OsLogos.debian,
+        میکروتیک: OsLogos.mikrotik,
+        MikroTik: OsLogos.mikrotik,
+        Issabel: OsLogos.issabel,
+
+        // OS Types:
+        Windows: OsLogos.windows,
+        Ubuntu18: OsLogos.ubuntu,
+        CentOs7: OsLogos.centOs,
+        Debian8: OsLogos.debian,
+        Other: OsLogos.other,
+      };
     </script>
 
     <script src="%PUBLIC_URL%/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/libs/jquery-ui.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/langs.js"></script>
+    <script src="%PUBLIC_URL%/assets/defaults.js"></script>
+
+    <!-- BEGIN WMKS -->
+    <script src="%PUBLIC_URL%/assets/js/libs/wmks.min.js"></script>
+    <!-- END WMKS -->
 
     <!-- BEGIN Snackbar -->
     <script src="%PUBLIC_URL%/assets/js/snackbar.min.js"></script>

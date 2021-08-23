@@ -1,5 +1,8 @@
 export default {
   SetPanelDetails: "SetPanelDetails",
+  SetAllMachines: "SetAllMachines",
+  RequirePass: "RequirePass",
+  SetCustomerDetails: "SetCustomerDetails",
   SetPanelScripts: "SetPanelScripts",
   ExecScriptResult: "ExecScriptResult",
   ExecScriptUpdate: "ExecScriptUpdate",
