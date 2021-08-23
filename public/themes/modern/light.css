@@ -1,0 +1,35 @@
+.theme_modern.theme_mode_light.panelRoot {
+  background-color: #fff;
+}
+
+.theme_modern.theme_mode_light .navbar {
+  color: #fff;
+  background-color: #292961 !important;
+}
+
+.theme_modern.theme_mode_light .brandName {
+  color: #fafafa;
+}
+
+.theme_modern.theme_mode_light .navbar .nav-link,
+.theme_modern.theme_mode_light .navbar .nav-item {
+  color: #fafafa !important;
+  opacity: 0.9;
+}
+.theme_modern.theme_mode_light .navbar .nav-item:hover {
+  opacity: 1;
+}
+
+.theme_modern.theme_mode_light .InstallCard {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.theme_modern.theme_mode_light .InstallCard:hover {
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_modern.theme_mode_light .scriptsList .script .scriptTitle {
+  color: #000;
+}

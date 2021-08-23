@@ -1,0 +1,75 @@
+.theme_classic.theme_mode_light.panelRoot {
+  background-color: #fff;
+}
+
+.theme_classic.theme_mode_light .OsLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  margin: 5px;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: #ffffffb0;
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_classic.theme_mode_light .templateName {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.theme_classic.theme_mode_light .quickActionsCard,
+.theme_classic.theme_mode_light .serverDetailsCard {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-self: stretch;
+  justify-content: space-around;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 15px 0;
+  background-color: #ffffffb0;
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_classic.theme_mode_light .quickActionsCard .action {
+  border-radius: 5px;
+}
+.theme_classic.theme_mode_light .quickActionsCard .action.disabled {
+  opacity: 0.3;
+}
+.theme_classic.theme_mode_light .quickActionsCard .action:not(.disabled):hover {
+  background-color: #00000020;
+  cursor: pointer;
+}
+.theme_classic.theme_mode_light
+  .quickActionsCard
+  .action:not(.disabled):active {
+  scale: 0.9;
+}
+
+.theme_classic.theme_mode_light .serverDetails {
+  margin-bottom: 0;
+  padding: 0 1rem;
+}
+
+.theme_classic.theme_mode_light .InstallCard {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.theme_classic.theme_mode_light .InstallCard:hover {
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_classic.theme_mode_light .scriptsList .script .scriptTitle {
+  color: #000;
+}

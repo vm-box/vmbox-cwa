@@ -1,0 +1,42 @@
+.theme_professional.theme_mode_light.panelRoot {
+  background-color: #fafafa;
+}
+
+.theme_professional.theme_mode_light .brandName {
+  color: #fafafa;
+}
+
+.theme_professional.theme_mode_light .navbar .nav-link,
+.theme_professional.theme_mode_light .navbar .nav-item {
+  color: #fafafa !important;
+  opacity: 0.9;
+}
+.theme_professional.theme_mode_light .navbar .nav-item:hover {
+  opacity: 1;
+}
+
+.theme_professional.theme_mode_light .professionalQuickActions .separator {
+  background-color: #00000080;
+}
+
+.theme_professional.theme_mode_light .InstallCard {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.theme_professional.theme_mode_light .InstallCard:hover {
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_professional.theme_mode_light .scriptsList .script .scriptTitle {
+  color: #000;
+}
+
+.theme_professional.theme_mode_light .PanelContent .nav-tabs .nav-link {
+  color: #333333a0;
+}
+.theme_professional.theme_mode_light .PanelContent .nav-tabs .nav-link:hover,
+.theme_professional.theme_mode_light .PanelContent .nav-tabs .nav-link.active {
+  color: #000;
+}

@@ -1,0 +1,45 @@
+.theme_mode_dark {
+  color: #fafafa;
+}
+
+.theme_mode_dark .dropdown-menu {
+  background-color: #0e1726;
+}
+
+.theme_mode_dark .navbar {
+  background-color: #191e3a !important;
+}
+
+.theme_mode_dark .dropdown-item {
+  padding: 0.35rem 1rem;
+  color: #ebedf2 !important;
+  font-size: 15px;
+}
+
+.theme_mode_dark .dropdown-item:hover {
+  background-color: #191e3a;
+}
+
+.theme_mode_dark .currentAction {
+  background-color: #191e3a;
+}
+
+.modal-content {
+  background-color: #0e1726 !important;
+  color: #fff;
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e640 !important;
+}
+.modal-footer {
+  border-top: 1px solid #dee2e640 !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.7 !important;
+}
+
+.theme_mode_dark .card {
+  background-color: #ffffff10;
+}

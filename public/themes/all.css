@@ -1,0 +1,52 @@
+.navbar .dropdown-menu {
+  right: 0;
+}
+.navbar.fixed-bottom .dropdown-menu {
+  bottom: 0;
+}
+
+.wmksBackground {
+  background-color: #0e1726fa;
+  z-index: 1000;
+  color: #fff;
+}
+
+.wmks_toolbar .dropdown-toggle {
+  height: 24px;
+  padding: 0 5px;
+  margin-top: -2px;
+}
+
+.wmks_toolbar .dropdown-toggle:not(:hover) {
+  background-color: #00000000;
+  border: 1px solid #00000000;
+}
+
+.screenshotFrame {
+  background-repeat: no-repeat;
+  background-image: url("../assets/screen-frame.png");
+  width: 240px;
+  height: 187px;
+}
+
+.screenshotFrame img {
+  margin-top: 6px;
+  margin-left: 5px;
+  width: 229px;
+  height: 126px;
+  object-fit: contain;
+  background-color: #333;
+  color: #000;
+  cursor: pointer;
+}
+
+.screenshotFrame img.viewFullScreen {
+  position: fixed;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: #222222ea;
+}

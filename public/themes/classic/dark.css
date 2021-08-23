@@ -1,0 +1,107 @@
+.theme_classic.theme_mode_dark.panelRoot {
+  background-color: #050718;
+}
+
+.theme_classic.theme_mode_dark .OsLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #0e1726;
+  border-radius: 10px;
+  margin: 5px;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: #0e1726;
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_classic.theme_mode_dark .templateName {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.theme_classic.theme_mode_dark .quickActionsCard,
+.theme_classic.theme_mode_dark .serverDetailsCard {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-self: stretch;
+  justify-content: space-around;
+  border: 1px solid #0e1726;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 15px 0;
+  background-color: #0e1726;
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_classic.theme_mode_dark .quickActionsCard .action {
+  border-radius: 5px;
+}
+.theme_classic.theme_mode_dark .quickActionsCard .action.disabled {
+  opacity: 0.3;
+}
+.theme_classic.theme_mode_dark .quickActionsCard .action:not(.disabled):hover {
+  background-color: #00000070;
+  cursor: pointer;
+}
+.theme_classic.theme_mode_dark .quickActionsCard .action:not(.disabled):active {
+  scale: 0.9;
+}
+
+.theme_classic.theme_mode_dark .serverDetails {
+  margin-right: auto;
+  margin-bottom: 0;
+  padding-left: 1rem;
+}
+
+.theme_classic.theme_mode_dark .PanelContent .nav-link,
+.theme_classic.theme_mode_dark.scriptModal .nav-link {
+  color: #495057;
+}
+
+.theme_classic.theme_mode_dark .PanelContent .nav-link.active,
+.theme_classic.theme_mode_dark.scriptModal .nav-link.active {
+  background-color: transparent;
+  color: #0d6efd;
+  border-bottom: 1px solid #050718;
+}
+
+.theme_classic.theme_mode_dark .PanelContent .nav-link:not(.active),
+.theme_classic.theme_mode_dark.scriptModal .nav-link:not(.active) {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.theme_classic.theme_mode_dark .InstallCard {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.theme_classic.theme_mode_dark .InstallCard:hover {
+  box-shadow: 2px 2px 2px 0 #00000050;
+  -webkit-box-shadow: 2px 2px 2px 0 #00000050;
+}
+
+.theme_classic.theme_mode_dark .scriptsList .script .scriptTitle {
+  color: #fff;
+}
+
+.theme_classic.theme_mode_dark.scriptModal .input-group {
+  color: #009688;
+}
+
+.theme_classic.theme_mode_dark.scriptModal .input-group-text {
+  color: #888ea8;
+  background-color: #191e3a;
+  border: 1px solid #1b2e4b;
+}
+
+.theme_classic.theme_mode_dark.scriptModal .form-control {
+  color: #009688;
+  background-color: #1b2e4b;
+  border: 1px solid #1b2e4b;
+}
