@@ -73,6 +73,9 @@ function Auth(props) {
               }}
             />
           </InputGroup>
+          {Interface.Utils.qs.GetQuery("DemoPass") ? (
+            <p>Password: {Interface.Utils.qs.GetQuery("DemoPass")}</p>
+          ) : undefined}
         </Modal.Body>
         <Modal.Footer>
           {requesting ? (

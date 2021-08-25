@@ -10,6 +10,8 @@
 
 # production
 /build
+/customerPanel
+/customerPanel.zip
 
 # misc
 .DS_Store

@@ -185,7 +185,7 @@ function Monitor(props) {
                 variant={"outline-primary"}
                 title={Interface.i18n.T(timeSpan)}
               >
-                <Dropdown.Item onClick={() => setNewTimespan("Real-time")}>
+                <Dropdown.Item onClick={() => setNewTimespan("RealTime")}>
                   {Interface.i18n.T("Real-time")}
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => setNewTimespan("LastDay")}>

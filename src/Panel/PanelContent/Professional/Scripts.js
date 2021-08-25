@@ -41,7 +41,9 @@ function Scripts(props) {
         if (parsedData.Res !== "success") {
           console.log("ExecScript failed", parsedData.Data);
           Interface.Alert.Show(
-            Interface.i18n.T("Error on executing script"),
+            Interface.i18n.T(
+              parsedData.Error ? parsedData.Error : "Error on executing script"
+            ),
             "error"
           );
           return;

@@ -39,6 +39,7 @@ function Overview(props) {
               console.log("Error on getting vm screenshot", parsedData);
             }
           }
+          sestScreenShotBase64("");
         } else {
           sestScreenShotBase64(data);
         }

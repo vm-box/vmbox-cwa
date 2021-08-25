@@ -35,6 +35,7 @@ function Panel(props) {
   React.useEffect(() => {
     MessageHandler.On(MessageHandler.MessageTypes.SetPanelDetails, (data) => {
       var parsedData = JSON.parse(data);
+      Interface.SetCurrentVmRecordId(parsedData.VmRecordId);
       setVmDetails(parsedData);
     });
   }, []);

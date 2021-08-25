@@ -41,12 +41,12 @@ function Setup(onOpen, onClose, onError) {
     wsConnection = null;
   };
 
-  if (window.IsDemo) {
+  if (window.IsDemo || Utils.qs.GetQuery("Demo")) {
     wsConnection = Demo.Setup();
     wsConnection.onclose = combinedOnClose;
     wsConnection.onopen = combinedOnOpen;
     wsConnection.onmessage = onNewMessage;
-    return;
+    return true;
   }
 
   if (window["WebSocket"]) {
