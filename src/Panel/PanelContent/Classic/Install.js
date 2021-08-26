@@ -40,21 +40,23 @@ function PlanTemplates(props) {
   var groups = {};
   var allLogos = null;
   var tempsWithLogo = temps
-    ? temps.map((t) => {
-        var logo = window.OsLogos.other;
-        if (window.OsTags[t.Name]) {
-          logo = window.OsTags[t.Name];
-        } else if (window.OsTags[t.OsType]) {
-          logo = window.OsTags[t.OsType];
-        }
-        if (!groups[logo]) {
-          groups[logo] = [];
-          if (!allLogos) allLogos = [];
-          allLogos.push(logo);
-        }
-        groups[logo].push(t);
-        return { ...t, Logo: logo };
-      })
+    ? vmDetails.Status !== "pending"
+      ? temps.map((t) => {
+          var logo = window.OsLogos.other;
+          if (window.OsTags[t.Name]) {
+            logo = window.OsTags[t.Name];
+          } else if (window.OsTags[t.OsType]) {
+            logo = window.OsTags[t.OsType];
+          }
+          if (!groups[logo]) {
+            groups[logo] = [];
+            if (!allLogos) allLogos = [];
+            allLogos.push(logo);
+          }
+          groups[logo].push(t);
+          return { ...t, Logo: logo };
+        })
+      : []
     : null;
 
   // each card has a logo and a list of templates. if there is only one template, it's not a list. it's a description
@@ -246,29 +248,34 @@ function CdDrives(props) {
           direction: Interface.i18n.GetLangDirection(),
         }}
       >
-        {cdDrives.map((cd, i) => (
-          <div key={i} className={`p-2 col-xs-12 col-sm-6 col-md-4 col-lg-3`}>
-            <span
-              className={`InstallCard w-100 m-2 p-2 d-flex justify-content-around align-items-center`}
-            >
-              <SVGs.IsoFile
-                className={`p-2`}
-                size={"80"}
-                style={{ display: "inline", width: "80px" }}
-              />
-              <Button
-                variant={"outline-secondary"}
-                size={"sm"}
-                onClick={InsertIsoClicked(cd)}
-                style={{ direction: Interface.i18n.GetLangDirection() }}
+        {vmDetails.Status !== "pending"
+          ? cdDrives.map((cd, i) => (
+              <div
+                key={i}
+                className={`p-2 col-xs-12 col-sm-6 col-md-4 col-lg-3`}
               >
-                {Interface.i18n.T("Insert")} {cd.Name}
-              </Button>
-            </span>
-          </div>
-        ))}
+                <span
+                  className={`InstallCard w-100 m-2 p-2 d-flex justify-content-around align-items-center`}
+                >
+                  <SVGs.IsoFile
+                    className={`p-2`}
+                    size={"80"}
+                    style={{ display: "inline", width: "80px" }}
+                  />
+                  <Button
+                    variant={"outline-secondary"}
+                    size={"sm"}
+                    onClick={InsertIsoClicked(cd)}
+                    style={{ direction: Interface.i18n.GetLangDirection() }}
+                  >
+                    {Interface.i18n.T("Insert")} {cd.Name}
+                  </Button>
+                </span>
+              </div>
+            ))
+          : undefined}
 
-        {cdDrives.length > 0 ? (
+        {vmDetails.Status !== "pending" && cdDrives.length > 0 ? (
           <div className={`p-2 col-xs-12 col-sm-6 col-md-4 col-lg-3`}>
             <span
               className={`InstallCard w-100 m-2 p-2 d-flex justify-content-around align-items-center`}
