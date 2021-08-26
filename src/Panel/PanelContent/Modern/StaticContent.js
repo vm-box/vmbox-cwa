@@ -119,7 +119,7 @@ function StaticContent(props) {
             }}
             alt={Interface.i18n.T(scAlt)}
             src={
-              screenShotBase64
+              screenShotBase64 && screenShotBase64 !== ""
                 ? `data:image/png;base64,${screenShotBase64}`
                 : undefined
             }

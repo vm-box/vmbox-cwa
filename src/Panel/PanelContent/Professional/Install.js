@@ -49,7 +49,7 @@ function PlanTemplates(props) {
   var groups = {};
   var allLogos = null;
   var tempsWithLogo = temps
-    ? vmDetails.Status !== "pending"
+    ? !vmDetails.Status.toLowerCase().includes("pending")
       ? temps.map((t) => {
           var logo = window.OsLogos.other;
           if (window.OsTags[t.Name]) {
@@ -252,7 +252,7 @@ function CdDrives(props) {
         className={`cdDrivesContainer d-flex justify-content-center`}
         style={{ flexWrap: "wrap" }}
       >
-        {vmDetails.Status !== "pending"
+        {!vmDetails.Status.toLowerCase().includes("pending")
           ? cdDrives.map((cd, i) => (
               <div
                 key={i}
@@ -282,7 +282,8 @@ function CdDrives(props) {
             ))
           : undefined}
 
-        {vmDetails.Status !== "pending" && cdDrives.length > 0 ? (
+        {!vmDetails.Status.toLowerCase().includes("pending") &&
+        cdDrives.length > 0 ? (
           <div
             className={`p-2 ${
               overview
