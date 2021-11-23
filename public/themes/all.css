@@ -50,3 +50,7 @@
   height: 100vh !important;
   background-color: #222222ea;
 }
+
+.backdrop-Z-index-1060 {
+  z-index: 1060 !important;
+}

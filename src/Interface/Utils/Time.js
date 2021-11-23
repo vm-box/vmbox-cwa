@@ -1,3 +1,58 @@
+import Axios from "axios";
+
+var UTC_offset = null; // Example: +03:30 is 3.5
+var utcOffsetGetters = [];
+
+function GetUTC_Offset(cb) {
+  cb = cb && typeof cb === "function" ? cb : () => {};
+  if (UTC_offset !== null) {
+    return UTC_offset;
+  }
+  utcOffsetGetters.push((newUTC) => {
+    cb(newUTC);
+  });
+  return null;
+}
+
+function ReLoadUtcOffset(forceReload, cb) {
+  forceReload = !!forceReload;
+  cb = cb && typeof cb === "function" ? cb : () => {};
+  var localStorageUtc = localStorage.getItem("utc_offset");
+  var localStorageUtcUpdateTime = localStorage.getItem("utc_offset_up");
+  var tooOld = false;
+  if (
+    localStorageUtcUpdateTime &&
+    Number(new Date()) - Number(localStorageUtcUpdateTime) >
+      7 * 24 * 3600 * 1000
+  ) {
+    tooOld = true;
+  }
+  if (!localStorageUtcUpdateTime || tooOld || forceReload) {
+    Axios.get("https://worldtimeapi.org/api/ip").then((resp) => {
+      var timeData = resp.data;
+      var [utc_offset_h, utc_offset_m] = timeData.utc_offset.split(":");
+      utc_offset_h = Number(utc_offset_h);
+      UTC_offset =
+        utc_offset_h +
+        (utc_offset_h > 0 ? 1 : -1) * (Number(utc_offset_m) / 60);
+      localStorage.setItem("utc_offset", `${UTC_offset}`);
+      localStorage.setItem("utc_offset_up", `${Number(new Date())}`);
+      cb(UTC_offset);
+      (async () => {
+        utcOffsetGetters.forEach((f) => {
+          f(UTC_offset);
+        });
+        utcOffsetGetters = [];
+      })();
+    });
+  } else {
+    if (localStorageUtc) {
+      UTC_offset = Number(localStorageUtc);
+      cb(UTC_offset);
+    }
+  }
+}
+
 function SecondsToElapsed(Seconds) {
   var a = new Date(Seconds * 1000);
   var seconds = parseInt(Seconds / 1) % 60;
@@ -88,4 +143,6 @@ function UnixToDateString(UNIX_timestamp, Options) {
 export default {
   SecondsToElapsed,
   UnixToDateString,
+  GetUTC_Offset,
+  ReLoadUtcOffset,
 };

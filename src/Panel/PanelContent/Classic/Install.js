@@ -28,7 +28,11 @@ function PlanTemplates(props) {
   React.useEffect(() => {
     MessageHandler.On(MessageHandler.MessageTypes.SetPlanTemplates, (data) => {
       var parsedData = JSON.parse(data);
-      setTemps(parsedData);
+      if (parsedData.length) {
+        setTemps(parsedData);
+      } else {
+        setTemps([]);
+      }
     });
     Interface.SendCommand(
       Interface.Commands.GetPlanTemplates,
@@ -38,7 +42,7 @@ function PlanTemplates(props) {
   }, []);
 
   var groups = {};
-  var allLogos = null;
+  var allLogos = [];
   var tempsWithLogo = temps
     ? !vmDetails.Status.toLowerCase().includes("pending")
       ? temps.map((t) => {

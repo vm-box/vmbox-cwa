@@ -12,6 +12,7 @@ import Utils from "./Utils";
 import i18n from "./i18n";
 import Theme from "./Theme";
 import WMKS from "./WMKS";
+import ToolTip from "./ToolTip";
 
 // WebSocket connection
 var wsConnection = null;
@@ -154,4 +155,5 @@ export default {
   i18n,
   Theme,
   WMKS,
+  ToolTip,
 };

@@ -70,6 +70,7 @@
   -webkit-box-shadow: 2px 2px 2px 0 #00000050;
 }
 
-.theme_classic.theme_mode_light .scriptsList .script .scriptTitle {
+.theme_classic.theme_mode_light .scriptsList .script .scriptTitle,
+.theme_classic.theme_mode_light .vmBackupsList .vmBackup .vmBackupTitle {
   color: #000;
 }

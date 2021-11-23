@@ -18,7 +18,8 @@
   border-bottom: 1px solid #aaaaaa80;
 }
 
-.theme_modern .scriptsList .script {
+.theme_modern .scriptsList .script,
+.theme_modern .vmBackupsList .vmBackup {
   margin: 10px;
   cursor: pointer;
   position: relative;
@@ -35,7 +36,8 @@
 }
 
 .theme_modern .scriptsList .script.done,
-.theme_modern .scriptsList .script.active {
+.theme_modern .scriptsList .script.active,
+.theme_modern .vmBackupsList .vmBackup.active {
   /* border: 2px solid #69ca62 !important; */
   color: #69ca62;
 }
@@ -50,28 +52,38 @@
   color: #e2a03f;
 }
 
-.theme_modern .scriptsList .script:hover {
+.theme_modern .scriptsList .script:hover,
+.theme_modern .vmBackupsList .vmBackup:hover {
   border: 1px solid #aaa;
 }
 
-.theme_modern .scriptsList .script:active {
+.theme_modern .scriptsList .script:active,
+.theme_modern .vmBackupsList .vmBackup:active {
   background-color: #ccc;
 }
 
-.theme_modern .scriptsList .script img {
+.theme_modern .scriptsList .script img,
+.theme_modern .vmBackupsList .vmBackup svg {
   display: block;
   margin: auto;
   max-width: 100%;
   max-height: 75%;
 }
 
-.theme_modern .scriptsList .script .scriptTitle {
+.theme_modern .vmBackupsList .vmBackup svg {
+  color: #0d6efd;
+}
+
+.theme_modern .scriptsList .script .scriptTitle,
+.theme_modern .vmBackupsList .vmBackup .vmBackupTitle {
   margin: auto;
   text-align: center;
 }
 
 .theme_modern .scriptsList .script::before,
-.theme_modern .scriptsList .script::after {
+.theme_modern .scriptsList .script::after,
+.theme_modern .vmBackupsList .vmBackup::before,
+.theme_modern .vmBackupsList .vmBackup::after {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -79,22 +91,27 @@
   right: 0;
 }
 .theme_modern .scriptsList .script::before,
-.theme_modern .scriptsList .script::after {
+.theme_modern .scriptsList .script::after,
+.theme_modern .vmBackupsList .vmBackup::before,
+.theme_modern .vmBackupsList .vmBackup::after {
   border-radius: 10px;
   content: "";
   margin: -5px;
   box-shadow: inset 0 0 0 2px;
 }
 .theme_modern .scriptsList .script.active::before,
-.theme_modern .scriptsList .script.active::after {
-  animation: modernScriptActiveAnim 4s linear infinite;
+.theme_modern .scriptsList .script.active::after,
+.theme_modern .vmBackupsList .vmBackup.active::before,
+.theme_modern .vmBackupsList .vmBackup.active::after {
+  animation: modernScriptOrVmBackupActiveAnim 4s linear infinite;
   /* background-color: rgba(255, 0, 0, 0.3); */
 }
-.theme_modern .scriptsList .script.active::before {
+.theme_modern .scriptsList .script.active::before,
+.theme_modern .vmBackupsList .vmBackup.active::before {
   animation-delay: -2s;
 }
 
-@keyframes modernScriptActiveAnim {
+@keyframes modernScriptOrVmBackupActiveAnim {
   0%,
   100% {
     clip: rect(0px, 132px, 2px, 0px);

@@ -98,10 +98,7 @@ function StaticContent(props) {
 
   return (
     <>
-      <div
-        ref={props.ref ? props.ref : {}}
-        className={`d-flex justify-content-center align-items-center pt-3`}
-      >
+      <div className={`d-flex justify-content-center align-items-center pt-3`}>
         <div
           className={`screenshotFrame`}
           style={{

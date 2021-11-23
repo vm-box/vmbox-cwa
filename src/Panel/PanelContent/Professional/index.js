@@ -5,6 +5,7 @@ import Install from "./Install";
 import Monitor from "./Monitor";
 import Scripts from "./Scripts";
 import Interface from "../../../Interface";
+import VmBackups from "./VmBackups";
 
 function ProfessionalPanelContent(props) {
   const { vmDetails, dNone } = props;
@@ -28,6 +29,9 @@ function ProfessionalPanelContent(props) {
           </Tab>
           <Tab eventKey="Scripts" title={Interface.i18n.T("Scripts")}>
             <Scripts vmDetails={vmDetails} />
+          </Tab>
+          <Tab eventKey="VmBackup" title={Interface.i18n.T("Backup")}>
+            <VmBackups vmDetails={vmDetails} />
           </Tab>
         </Tabs>
       </div>
